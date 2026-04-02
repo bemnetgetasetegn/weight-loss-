@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:    #e65100;
+      --green-lt: #ff6d00;
+      --accent:   #ffcc80;
+      --bg:       #fff8f1;
+      --card-bg:  #ffffff;
+      --text:     #2e1b0e;
+      --muted:    #7a5a3a;
+      --shadow:   0 4px 24px rgba(230,81,0,.10);
+      --radius:   18px;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #bf360c 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 20px 56px;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      opacity: .85;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── STEPS GRID ── */
+    .steps-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 20px 80px;
+    }
+    .steps-section h2 {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 48px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    /* ── CARD ── */
+    .step-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(230,81,0,.18);
+    }
+
+    /* step image */
+    .step-img-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* placeholder icon shown when no image is set */
+    .step-img-wrap .placeholder-icon {
+      font-size: 4rem;
+      opacity: .55;
+      pointer-events: none;
+    }
+
+    /* step body */
+    .step-body {
+      padding: 24px 22px 28px;
+      flex: 1;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: .9rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .step-desc {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: .82rem;
+      color: var(--muted);
+      border-top: 1px solid #ffe0b2;
+    }
+
+    /* ── RESPONSIVE TWEAKS ── */
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; gap: 24px; }
+      .hero { padding: 48px 16px 40px; }
+      .steps-section { padding: 48px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="badge">How It Works</div>
+    <h1>Your Step-by-Step Guide</h1>
+    <p>Follow each step carefully to get the best results on your wellness journey.</p>
+  </header>
+
+  <!-- STEPS -->
+  <main class="steps-section">
+    <h2>Instructions</h2>
+
+    <div class="steps-grid">
+
+      <!-- STEP 1 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <!-- Replace src with your actual image path, e.g. src="images/step1.jpg" -->
+          <span class="placeholder-icon">🌿</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Prepare Your Herbal Blend</h3>
+          <p class="step-desc">Measure the recommended amount of the herbal blend into a cup or infuser before starting.</p>
+        </div>
+      </article>
+
+      <!-- STEP 2 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <span class="placeholder-icon">🫖</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Add Hot Water</h3>
+          <p class="step-desc">Pour 250 ml of freshly boiled water (not boiling) over the herbs and let it steep for 5–10 minutes.</p>
+        </div>
+      </article>
+
+      <!-- STEP 3 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <span class="placeholder-icon">⏱️</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Wait &amp; Strain</h3>
+          <p class="step-desc">Remove the infuser or strain the liquid into a clean cup to separate the herbs from the tea.</p>
+        </div>
+      </article>
+
+      <!-- STEP 4 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <span class="placeholder-icon">☕</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Drink &amp; Enjoy</h3>
+          <p class="step-desc">Sip slowly. Drink once or twice daily, preferably 30 minutes before meals for best results.</p>
+        </div>
+      </article>
+
+      <!-- STEP 5 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <span class="placeholder-icon">💧</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">5</div>
+          <h3 class="step-title">Stay Hydrated</h3>
+          <p class="step-desc">Drink at least 8 glasses of water throughout the day to support the detox process.</p>
+        </div>
+      </article>
+
+      <!-- STEP 6 -->
+      <article class="step-card">
+        <div class="step-img-wrap">
+          <span class="placeholder-icon">📅</span>
+        </div>
+        <div class="step-body">
+          <div class="step-number">6</div>
+          <h3 class="step-title">Be Consistent</h3>
+          <p class="step-desc">Use the product daily for at least 4 weeks. Consistency is key to seeing visible results.</p>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Twins Herbal Weight Loss &mdash; All rights reserved.
+  </footer>
+
+</body>
+</html>
